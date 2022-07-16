@@ -1,0 +1,53 @@
+.Container-TaskItem {
+    min-width: 70%;
+    max-width: 95%;
+    min-height: 35px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px auto;
+    padding: 8px 2px;
+    border-radius: 10px;
+    background-color: #3374ec;
+    box-shadow: 0px 3px 4px rgba(32, 35, 41, 0.849);
+    /* border: solid red 1px; */
+    transition: 0.6s;
+}
+.Container-TaskItem:hover{
+    background-color: #1651be;
+    transition: 0.3s;
+}
+.TaskItem-p {
+    width: 80%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    overflow: hidden;
+}
+.TaskItem-p--complete {
+    text-decoration: line-through;
+  }
+
+.icon-check {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.icon-check--active {
+    color: #00d607;
+}
+
+.icon-delete {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;   
+}
+.icon-delete:hover {
+    color: red;
+  }

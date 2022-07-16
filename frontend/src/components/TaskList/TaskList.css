@@ -1,0 +1,10 @@
+.container-TaskList {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 22px auto 10px auto;
+    /* border: solid red 1px; */
+}
+.container-TaskList ul {
+    
+}

@@ -1,0 +1,5 @@
+db info: 
+usuario:  daniel-task
+pass :    multimedia22
+
+mongodb+srv://<username>:<password>@cluster0.rbekc.mongodb.net/?retryWrites=true&w=majority
