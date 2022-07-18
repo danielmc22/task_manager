@@ -1,17 +1,48 @@
 import React from 'react';
 import "./TaskItem.css";
 
-const TaskItem = (props) => {
-  return (
 
-    <div className='Container-TaskItem' >
+const TaskItem = ({id, taskData, delTask, edTask}) => {
+
+    const {description, creator, date} = taskData
+
+    const formatDate = (date) => {
+      return date.substring(8,10) + date.substring(4,8) + date.substring(0,4);
+    }
+
+    const fxDelete = () =>{
+        delTask(id)
+    };
+
+    const fxUpdate = () =>{
+        edTask(id)
+    };
+
+
+    return (
+
+    <div className='Container-TaskItem'>
       
-        <span className={`icon icon-check ${props.finished && 'icon-check--active'}`}>V</span>
+        <div className='TaskItem-left'>
+            <input type="checkbox" className="checkbox" onClick={fxUpdate}/>
+        </div>
+
+        <div className="TaskItem-center">
+              <div className='TaskItem-center-a'>
+                  <p  > {description} </p>
+              </div>
+              <div className='TaskItem-center-b'>
+                  <p> Create: {formatDate(date)} </p>
+              </div>
+              <div className='TaskItem-center-c'>
+                  <p> By: {creator} </p>
+              </div>
+        </div>
+
+        <div className='TaskItem-right'>
+            <button className='btn-delete' onClick={fxDelete} type="button">X</button>
+        </div>
         
-        <p className={`TaskItem-p ${props.finished && 'TaskItem-p--complete'}`}> {props.text} </p>
-        
-        <span className='icon icon-delete'>X</span>
-      
     </div>
   )
 }

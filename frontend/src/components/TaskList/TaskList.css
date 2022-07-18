@@ -3,8 +3,14 @@
     justify-content: center;
     width: 50%;
     margin: 22px auto 10px auto;
-    /* border: solid red 1px; */
 }
 .container-TaskList ul {
     
+}
+
+.no-tasks {
+    color:black;
+    text-align: center;
+    margin-top: 90px;
+    font-size: 35px;
 }

@@ -1,13 +1,26 @@
 * {
   margin: 0;
   padding: 0;
-  background: #114bb6;
   color: #ffffff;
   font-family: 'Be Vietnam Pro', Arial, sans-serif;
 }
 
 .App {
-  text-align: center;
+  width: 100%;
+  display: flex;
+  border: solid red, 1px ;
+  /* text-align: center; */
+}
+.leftPlace {
+  display: flex;
+  width: 40%;
+  border: solid red, 1px ;
+}
+.rightPlace {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border: solid red, 1px;
 }
 
 
