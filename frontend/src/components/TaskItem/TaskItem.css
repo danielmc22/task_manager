@@ -14,6 +14,16 @@
     /* border: solid red 1px; */
     transition: 0.6s;
 }
+.Container-TaskItem:hover {
+    min-width: 300px;
+    width: 51vw;
+    min-height: 45px;
+    padding: 5px 2px 2px 2px;
+    border-radius: 10px;
+    background-color: #2561d1;
+    box-shadow: 0px 5px 6px rgba(32, 35, 41, 0.849);
+    transition: 0.6s;
+}
 .TaskItem-left {
     width: 5%;
     display: flex;
@@ -86,7 +96,4 @@
 .no-checked {
     text-decoration: none;
 }
-/* .checked {
-    text-decoration: line-through;
-    color:green;
-} */
+

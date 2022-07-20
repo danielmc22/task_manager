@@ -1,9 +1,7 @@
  const taskModel = require("../models/Task");
 
-
-
  const controller = {
-
+    
 
     save: (req, res) => {
         const params = req.body;
@@ -78,29 +76,14 @@
         })
     },
 
-    update: (req, res) =>{
-        const params = req.body
-        const task = new taskModel();
+    update: async (req, res) =>{
+        let taskId = req.params.id
+        let taskBody = req.body
 
-        task.description = params.description
-        task.completed = params.completed
-        task.creator = params.creator
-
-        let taskId = params.id;
-        taskModel.findByIdAndUpdate ({_id:taskId}, task =>{
-
-            if(!task){
-                return res.status(404).send({
-                    status: "error",
-                    message: "error update"
-                });
-            }
-            return res.status(200).send({
-                status: "succes",
-                task: task
-            })
-        }) 
+        await taskModel.findOneAndUpdate ({_id:taskId}, taskBody).then(
+            (response) => res.json({response})
+        );
     }
- }
+ };
 
  module.exports = controller;

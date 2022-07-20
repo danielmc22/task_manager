@@ -8,14 +8,14 @@ import { TaskItem } from "../TaskItem/TaskItem";
 const TaskList = () => {
   
   const [tasks, setTasks] = useState([]);
-  const [complete, setCompleted] = useState({
+  const [completed, setCompleted] = useState({
     description: null,
     creator:null,
     completed: false
 
   })
 
-  console.log(complete)
+  console.log(completed)
 
   const url = GLOBAL.url
 
@@ -52,13 +52,10 @@ const TaskList = () => {
   const editTask = (id) =>{
     changeState(id)
     const idTask = tasks[id]._id;
-    const completedTask = tasks[id].completed
-    axios.put(url + "update/" + idTask, complete ).then(res=>{
-      res.json({status:"ok"})
+    axios.put(url + "update/" + idTask, completed ).then(res=>{
       getTasks();
     }); 
 };
-
 
   return (
 
