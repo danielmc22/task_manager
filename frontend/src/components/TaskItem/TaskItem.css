@@ -50,6 +50,13 @@
 .TaskItem-center-a p{ 
     margin-top: 8px;
 }
+.no-completed {
+    color:#6eff19
+}
+.ok-completed {
+    color:#b91313;
+    text-decoration: line-through;
+}
 .TaskItem-center-b {
     width:45%;
     height: 20%;

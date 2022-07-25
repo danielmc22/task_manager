@@ -8,14 +8,12 @@ import { TaskItem } from "../TaskItem/TaskItem";
 const TaskList = () => {
   
   const [tasks, setTasks] = useState([]);
-  const [completed, setCompleted] = useState({
-    description: null,
-    creator:null,
-    completed: false
+  /* const [completed, setCompleted] = useState({
 
-  })
+    completed: null
 
-  console.log(completed)
+  }) */
+
 
   const url = GLOBAL.url
 
@@ -41,21 +39,24 @@ const TaskList = () => {
   };
 
 //editar una tarea
-  const changeState = (id) =>{
+  /* const changeState = (state) =>{
     setCompleted({
-      description: tasks[id].description,
-      creator:tasks[id].creator,
-      completed: true,
-    })
-  }
 
-  const editTask = (id) =>{
-    changeState(id)
+      completed: state,
+      
+    })
+  } */
+
+  const editTask = async (id, state) =>{
+    /* changeState(state) */
     const idTask = tasks[id]._id;
-    axios.put(url + "update/" + idTask, completed ).then(res=>{
+    await axios.put(url + "update/" + idTask, {completed:state} ).then(res=>{
       getTasks();
+      console.log(idTask)
     }); 
 };
+console.log(tasks)
+
 
   return (
 

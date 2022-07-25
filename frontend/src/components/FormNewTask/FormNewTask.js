@@ -29,7 +29,7 @@ const FormNewTask = () => {
 
   const sendData = (event) => {
     event.preventDefault();
-    changeState();
+    changeState(); 
     axios.post(url + "save", task).then(res =>{
         setRedirect(true);
         console.log(res.data)})
@@ -57,7 +57,7 @@ const FormNewTask = () => {
                         <input ref={creatorRef} onChange={changeState} type="text" classname="form-control" id="creator" name="creator" placeholder="Creator Name" required />
                     </div>
                     <div className='mb-3'>
-                        <input classname="btn-submit" type="submit" id="publish" value="Add" />
+                        <input className="btn-submit" type="submit" id="publish" value="Add" />
                     </div>
                 </form>
 

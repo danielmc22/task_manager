@@ -79,8 +79,9 @@
     update: async (req, res) =>{
         let taskId = req.params.id
         let taskBody = req.body
+        console.log(req.body)
 
-        await taskModel.findOneAndUpdate ({_id:taskId}, taskBody).then(
+        const result = await taskModel.findOneAndUpdate ({_id:taskId}, taskBody).then(
             (response) => res.json({response})
         );
     }
