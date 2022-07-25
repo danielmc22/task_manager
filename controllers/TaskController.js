@@ -2,7 +2,6 @@
 
  const controller = {
     
-
     save: (req, res) => {
         const params = req.body;
         const task = new taskModel();
@@ -16,14 +15,12 @@
                     message: "fail save task "
                 })
             }
-
             return res.status(200).send({
                 status: "success",
                 taskStored
             });
         });
     },
-
 
     getTasks: (req, res) => {
         const query = taskModel.find({});
@@ -48,7 +45,6 @@
                 tasks
             });
         });
-
     },
 
     delete: (req, res) => {
@@ -76,12 +72,12 @@
         })
     },
 
-    update: async (req, res) =>{
+    update: (req, res) =>{
         let taskId = req.params.id
         let taskBody = req.body
         console.log(req.body)
 
-        const result = await taskModel.findOneAndUpdate ({_id:taskId}, taskBody).then(
+        taskModel.findOneAndUpdate ({_id:taskId}, taskBody).then(
             (response) => res.json({response})
         );
     }

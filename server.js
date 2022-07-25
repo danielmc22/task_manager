@@ -1,5 +1,4 @@
 const express = require("express");
-const { startSession } = require("mongoose");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose")
@@ -18,7 +17,6 @@ app.use(bodyParser.json());
 
 //permisos cors 
 app.use(cors());
-
 
 app.use("/api", task_routes); 
 

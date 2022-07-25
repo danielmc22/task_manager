@@ -48,7 +48,6 @@ const FormNewTask = () => {
             <div className='container-title'>
                 <h4>New Task</h4>
             </div>
-
                 <form className='card-body' onSubmit={sendData}>
                     <div className='mb-3'>
                         <textarea ref={descRef} onChange={changeState} type="text" classname="textArea-descr" id="desc" name="desc" placeholder="Type your task..." required />
@@ -60,10 +59,9 @@ const FormNewTask = () => {
                         <input className="btn-submit" type="submit" id="publish" value="Add" />
                     </div>
                 </form>
-
         </div>
-
     </div>
+    
   )
 }
 

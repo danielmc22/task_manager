@@ -1,7 +1,5 @@
 const express = require("express");
 const taskController = require("../controllers/TaskController");
-const taskModel = require("../models/Task")
-
 const router = express.Router();
 
 //Rutas

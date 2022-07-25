@@ -8,29 +8,21 @@ import { TaskItem } from "../TaskItem/TaskItem";
 const TaskList = () => {
   
   const [tasks, setTasks] = useState([]);
-  /* const [completed, setCompleted] = useState({
-
-    completed: null
-
-  }) */
-
-
   const url = GLOBAL.url
 
   useEffect(() => {
 
       getTasks();
-}, [tasks.length]);
-  
 
-//obtener todas las tareas
+}, [tasks.length]);
+
+  
   const getTasks = () => {
       axios.get(url + "tasks").then(res =>{
         setTasks(res.data.tasks)
       })
   };
 
-//borrar una tarea
   const deleteTask = (id) =>{
       const idTask = tasks[id]._id;
       axios.delete(url + "delete/" + idTask).then(res=>{
@@ -38,24 +30,13 @@ const TaskList = () => {
       }); 
   };
 
-//editar una tarea
-  /* const changeState = (state) =>{
-    setCompleted({
-
-      completed: state,
-      
-    })
-  } */
-
-  const editTask = async (id, state) =>{
-    /* changeState(state) */
+  const editTask = (id, state) =>{
     const idTask = tasks[id]._id;
-    await axios.put(url + "update/" + idTask, {completed:state} ).then(res=>{
+    axios.put(url + "update/" + idTask, {completed:state} ).then(res=>{
       getTasks();
       console.log(idTask)
     }); 
 };
-console.log(tasks)
 
 
   return (
